@@ -202,7 +202,7 @@ namespace MvcSuperShop.Tests.Services
         }
 
         [TestMethod]
-        public void When_ProductMatch_is_Electric_And_Agreement_discount_is_valid_product_price_is_reduced_by_Who_ever_gives_best_reduction()
+        public void When_ProductMatch_is_Electric_And_Agreement_discount_is_valid_product_price_is_reduced_by_Who_ever_gives_best_discount()
         {
             //Arrange
             var productList = new List<ProductServiceModel>
