@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Humanizer;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MvcSuperShop.Data;
 using MvcSuperShop.Infrastructure.Context;
@@ -183,9 +184,51 @@ namespace MvcSuperShop.Tests.Services
                         {
                             new AgreementRow
                             {
+                                
                                 PercentageDiscount = 30.0m,
                                 ProductMatch = "Electric"
+                            },
+                            
+                        }
+                    }
+                }
+            };
+
+            //act
+            var products = _sut.CalculatePrices(productList, customerContext);
+
+            //Assert
+            Assert.AreEqual(7000, products.First().Price);
+        }
+
+        [TestMethod]
+        public void When_ProductMatch_is_Electric_And_Agreement_discount_is_valid_product_price_is_reduced_by_Who_ever_gives_best_reduction()
+        {
+            //Arrange
+            var productList = new List<ProductServiceModel>
+            {
+                new ProductServiceModel{BasePrice = 10000, Name = "Electric"}
+            };
+
+            var customerContext = new CurrentCustomerContext
+            {
+                Agreements = new List<Agreement>
+                {
+                    new Agreement
+                    {
+                        AgreementRows = new List<AgreementRow>
+                        {
+                            new AgreementRow
+                            {
+
+                                PercentageDiscount = 30.0m,
+                                ProductMatch = "Electric"
+                            },
+                            new AgreementRow
+                            {
+                                PercentageDiscount = 20.0m,
                             }
+
                         }
                     }
                 }
