@@ -217,16 +217,10 @@ namespace MvcSuperShop.Tests.Services
                 }
             };
 
-
-
-
             //act
             var products = _sut.CalculatePrices(productList, customerContext);
 
-
-
             //Assert
-
             Assert.AreEqual(7000, products.First().Price);
         }
     }
