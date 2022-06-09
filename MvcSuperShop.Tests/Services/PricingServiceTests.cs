@@ -62,29 +62,21 @@ namespace MvcSuperShop.Tests.Services
                      {
                           AgreementRows = new List<AgreementRow>
                          {
-                    
-                              new AgreementRow
+                             new AgreementRow
                               {
                                   PercentageDiscount = 10.0m
                               }
-    
-                          }
+                         }
 
                      }
 
                 }
             };
 
-            
-
-
             //act
             var products = _sut.CalculatePrices(productList, customerContext);
 
-
-
             //Assert
-
             Assert.AreEqual(9000, products.First().Price);
         }
 
@@ -99,21 +91,16 @@ namespace MvcSuperShop.Tests.Services
 
             var customerContext = new CurrentCustomerContext
             {
-                
                 Agreements = new List<Agreement>
                 {
-                   
                     new Agreement
                     {
                         AgreementRows = new List<AgreementRow>
                         {
-                            
                             new AgreementRow
                             {
-                                
                                 CategoryMatch = "van",
                                 PercentageDiscount = 5.0m
-
                             }
 
                         }
@@ -132,7 +119,6 @@ namespace MvcSuperShop.Tests.Services
 
 
             //Assert
-
             Assert.AreEqual(9500, products.First().Price);
         }
 
@@ -147,22 +133,16 @@ namespace MvcSuperShop.Tests.Services
 
             var customerContext = new CurrentCustomerContext
             {
-
                 Agreements = new List<Agreement>
                 {
-
                     new Agreement
                     {
                         AgreementRows = new List<AgreementRow>
                         {
-
                             new AgreementRow
                             {
-
-                                
                                 PercentageDiscount = 50.0m,
                                 ManufacturerMatch = "Volvo"
-
                             }
 
                         }
@@ -181,7 +161,6 @@ namespace MvcSuperShop.Tests.Services
 
 
             //Assert
-
             Assert.AreEqual(5000, products.First().Price);
         }
 
@@ -196,21 +175,16 @@ namespace MvcSuperShop.Tests.Services
 
             var customerContext = new CurrentCustomerContext
             {
-
                 Agreements = new List<Agreement>
                 {
-
                     new Agreement
                     {
                         AgreementRows = new List<AgreementRow>
                         {
-
                             new AgreementRow
                             {
-
                                 PercentageDiscount = 30.0m,
                                 ProductMatch = "Electric"
-
                             }
                         }
                     }
