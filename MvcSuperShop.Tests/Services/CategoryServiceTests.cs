@@ -31,11 +31,11 @@ namespace MvcSuperShop.Tests.Services
         {
             //Arrange
 
-            var category1 = new Category() { Id = 4, Name = "Electric", Icon = "Nice" };
+            var category1 = new Category() { Id = 1, Name = "Electric", Icon = "Nice" };
 
-            var category2 = new Category() { Id = 5, Name = "Automated", Icon = "Perfekt" };
+            var category2 = new Category() { Id = 2, Name = "Automated", Icon = "Perfekt" };
 
-            var category3 = new Category() { Id = 6, Name = "Hybrid", Icon = "Good" };
+            var category3 = new Category() { Id = 3, Name = "Hybrid", Icon = "Good" };
 
             _context.Categories.Add(category1);
             _context.Categories.Add(category2);
