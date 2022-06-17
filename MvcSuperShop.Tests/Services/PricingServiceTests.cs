@@ -197,7 +197,7 @@ namespace MvcSuperShop.Tests.Services
             //Arrange
             var productList = new List<ProductServiceModel>
             {
-                new ProductServiceModel{BasePrice = 10000, Name = "Electric"}
+                new ProductServiceModel{BasePrice = 10000, Name = "Electric", CategoryName = "Volvo"}
             };
 
             var customerContext = new CurrentCustomerContext
@@ -217,6 +217,7 @@ namespace MvcSuperShop.Tests.Services
                             new AgreementRow
                             {
                                 PercentageDiscount = 20.0m,
+                                CategoryMatch = "Volvo"
                             }
                         }
                     }
