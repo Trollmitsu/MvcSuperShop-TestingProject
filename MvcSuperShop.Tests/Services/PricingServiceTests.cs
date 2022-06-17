@@ -68,9 +68,7 @@ namespace MvcSuperShop.Tests.Services
                                   PercentageDiscount = 10.0m
                               }
                          }
-
                      }
-
                 }
             };
 
@@ -103,20 +101,14 @@ namespace MvcSuperShop.Tests.Services
                                 CategoryMatch = "van",
                                 PercentageDiscount = 5.0m
                             }
-
                         }
-
                     }
-
                 }
             };
 
 
-            
-
             //act
             var products = _sut.CalculatePrices(productList, customerContext);
-
 
 
             //Assert
@@ -154,11 +146,8 @@ namespace MvcSuperShop.Tests.Services
             };
 
 
-
-
             //act
             var products = _sut.CalculatePrices(productList, customerContext);
-
 
 
             //Assert
@@ -187,15 +176,16 @@ namespace MvcSuperShop.Tests.Services
                                 
                                 PercentageDiscount = 30.0m,
                                 ProductMatch = "Electric"
-                            },
-                            
+                            }
                         }
                     }
                 }
             };
 
+
             //act
             var products = _sut.CalculatePrices(productList, customerContext);
+
 
             //Assert
             Assert.AreEqual(7000, products.First().Price);
@@ -228,14 +218,15 @@ namespace MvcSuperShop.Tests.Services
                             {
                                 PercentageDiscount = 20.0m,
                             }
-
                         }
                     }
                 }
             };
 
+
             //act
             var products = _sut.CalculatePrices(productList, customerContext);
+
 
             //Assert
             Assert.AreEqual(7000, products.First().Price);
